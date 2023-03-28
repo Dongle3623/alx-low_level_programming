@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define koko printf
+#define puts printf
 /**
  * main - Entry point
  *
@@ -7,6 +7,6 @@
  */
 int main(void)
 {/*...*/
-koko("\"Programming is like building a multilingual puzzle\n");
+puts("\"Programming is like building a multilingual puzzle\n");
 return (0);
 }
