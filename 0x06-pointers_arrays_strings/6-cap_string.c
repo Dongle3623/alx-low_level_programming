@@ -36,4 +36,4 @@ index++;
 }
 return (str);
 }
-}
+
