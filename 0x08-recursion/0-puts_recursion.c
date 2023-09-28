@@ -12,7 +12,6 @@ _puts_recursion(s + 1);
 }
 int main(void)
 {
-char *str = "Hello, World!";
-_puts_recursion(str);
+ _puts_recursion("Puts with recursion");
 return 0;
 }
