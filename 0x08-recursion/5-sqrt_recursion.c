@@ -29,7 +29,7 @@ int mid;
 if (start <= end)
 {
 mid = (start + end) / 2;
-if (mid *mid == n)
+if (mid <= n / mid && (mid + 1) > n / (mid + 1))
 return (mid);
 if (mid *mid < n)
 return (_sqrt_helper(n, mid + 1, end));
