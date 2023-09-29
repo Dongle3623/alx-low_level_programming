@@ -25,15 +25,15 @@ return (sqrt_helper(n, 0, n));
 int sqrt_helper(int n, int min, int max)
 {
 int mid;
-if (start <= end)
+if (min <= max)
 {
-mid = (start + end) / 2;
+mid = (min + max) / 2;
 if (mid <= n / mid && (mid + 1) > n / (mid + 1))
 return (mid);
 if (mid < n / mid)
-return sqrt_helper(n, mid + 1, end);
+return sqrt_helper(n, mid + 1, max);
 else
-return sqrt_helper(n, start, mid - 1);
+return sqrt_helper(n, min, mid - 1);
 }
 return -1;
 }
