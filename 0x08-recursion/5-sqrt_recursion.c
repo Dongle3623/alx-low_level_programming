@@ -24,7 +24,6 @@ return (sqrt_helper(n, 0, n));
  */
 int sqrt_helper(int n, int min, int max)
 {
-int mid;
 int guess;
 if (max < min)
 return (-1);
