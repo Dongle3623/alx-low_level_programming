@@ -10,30 +10,31 @@ int _sqrt_recursion(int n)
 {
 if (n < 0)
 return (-1);
-else
-return (sqrt_helper(n, 0, n));
+if (n == 0 || n == 1)
+return (n);
+return (_sqrt_helper(n, 1, n));
 }
 /**
- * sqrt_helper - Recursive helper function to find the square root.
+ * _sqrt_helper - Recursive helper function to find the square root.
  * @n: The number to calculate the square root of.
- * @min: The minimum possible value of the square root.
- * @max: The maximum possible value of the square root.
+ * @start: The starting point for the search.
+ * @end: The ending point for the search.
  *
- * Return: The natural square root of `n`, or -1 if `n` does not have a
- * natural square root.
+ * Return: The natural square root of `n`, or -1 if `n`
+ * does not have a natural square root.
  */
-int sqrt_helper(int n, int min, int max)
+int _sqrt_helper(int n, int start, int end)
 {
 int mid;
-if (min <= max)
+if (start <= end)
 {
-mid = (min + max) / 2;
+mid = (start + end) / 2;
 if (mid <= n / mid && (mid + 1) > n / (mid + 1))
 return (mid);
-if (mid < n / mid)
-return sqrt_helper(n, mid + 1, max);
+if (mid <= n / mid)
+return (_sqrt_helper(n, mid + 1, end));
 else
-return sqrt_helper(n, min, mid - 1);
+return (_sqrt_helper(n, start, mid - 1));
 }
-return -1;
+return (-1);
 }
