@@ -10,30 +10,27 @@ int _sqrt_recursion(int n)
 {
 if (n < 0)
 return (-1);
-if (n == 0 || n == 1)
-return (n);
-return (_sqrt_helper(n, 1, n));
+else
+return (sqrt_helper(n, 0, n));
 }
 /**
- * _sqrt_helper - Recursive helper function to find the square root.
+ * sqrt_helper - Recursive helper function to find the square root.
  * @n: The number to calculate the square root of.
- * @start: The starting point for the search.
- * @end: The ending point for the search.
+ * @min: The minimum possible value of the square root.
+ * @max: The maximum possible value of the square root.
  *
- * Return: The natural square root of `n`, or -1 if `n`
- * does not have a natural square root.
+ * Return: The natural square root of `n`, or -1 if `n` does not have a
+ * natural square root.
  */
-int _sqrt_helper(int n, int start, int end)
+int sqrt_helper(int n, int min, int max)
 {
-int mid;
-if (start <= end)
-{
-mid = (start + end) / 2;
-if (mid <= n / mid && (mid + 1) > n / (mid + 1))
-return (mid);
-if (mid *mid < n)
-return (_sqrt_helper(n, mid + 1, end));
-return (_sqrt_helper(n, start, mid - 1));
-}
-return (end);
+if (max < min)
+return (-1);
+int guess = (min + max) / 2;
+if (guess *guess == n)
+return (guess);
+else if (guess *guess < n)
+return (sqrt_helper(n, guess + 1, max));
+else
+return (sqrt_helper(n, min, guess - 1));
 }
