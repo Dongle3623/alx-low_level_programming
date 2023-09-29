@@ -24,14 +24,16 @@ return (sqrt_helper(n, 0, n));
  */
 int sqrt_helper(int n, int min, int max)
 {
-int guess;
-if (max < min)
-return (-1);
-guess = (min + max) / 2;
-if (guess *guess == n)
-return (guess);
-else if (guess *guess < n)
-return (sqrt_helper(n, guess + 1, max));
+int mid;
+if (start <= end)
+{
+mid = (start + end) / 2;
+if (mid <= n / mid && (mid + 1) > n / (mid + 1))
+return (mid);
+if (mid < n / mid)
+return sqrt_helper(n, mid + 1, end);
 else
-return (sqrt_helper(n, min, guess - 1));
+return sqrt_helper(n, start, mid - 1);
+}
+return -1;
 }
