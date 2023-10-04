@@ -15,7 +15,7 @@ int i, j, len1 = 0, len2 = 0;
 char *new_str;
 if (s1 == NULL)
 s1 = "";
-else 
+else
 while (s1[len1])
 len1++;
 if (s2 == NULL)
