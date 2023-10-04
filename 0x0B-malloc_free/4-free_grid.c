@@ -8,7 +8,8 @@
  *
  * Return: void
  */
-void free_grid(int **grid, int height) {
+void free_grid(int **grid, int height)
+{
 int i;
 /* Check if grid or height is NULL or less than or equal to 0 */
 if (grid == NULL || height <= 0)
