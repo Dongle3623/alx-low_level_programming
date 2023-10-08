@@ -26,9 +26,9 @@ len_s1++;
 while (s2[len_s2])
 len_s2++;
 if (n >= len_s2)
-concat = malloc(sizeof(char)*(len_s1 + len_s2 + 1));
+concat = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 else
-concat = malloc(sizeof(char)*(len_s1 + n + 1));
+concat = malloc(sizeof(char) * (len_s1 + n + 1));
 if (concat == NULL)
 return (NULL);
 memcpy(concat, s1, len_s1);
