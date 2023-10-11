@@ -22,14 +22,3 @@ void print_name(char *name, void (*f)(char *))
 {
     f(name);
 }
-
-/**
- * main - Main function
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-    print_name("Betty", print);
-    return (0);
-}
